@@ -12,7 +12,7 @@ private String name;
 
     private String address;
 
-    private int phone_number;
+    private long phone_number;
 
     private String username;
 
@@ -24,7 +24,7 @@ private String name;
 
 
 
-public IPEUTHINOS_ANTHRWPINOU_DUNAMIKOU (String name, String lastname, String city, String address, int phone_number, String username, String email, String password, String brand_name)
+public IPEUTHINOS_ANTHRWPINOU_DUNAMIKOU (String name, String lastname, String city, String address, long phone_number, String username, String email, String password, String brand_name)
     
 	{
         
@@ -89,12 +89,12 @@ public void set_address(String address)
         this.address = address;
     }
 
-public int get_phone_number()
+public long get_phone_number()
     {
         return phone_number;
     }
 
-public void set_phone_number(int phone_number)
+public void set_phone_number(long phone_number)
     {
         this.phone_number = phone_number;
     }

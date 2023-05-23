@@ -1,6 +1,8 @@
 
 package com.mycompany.careerfinder;
 
+import java.util.ArrayList;
+
 
 public class PTYXIOUXOS {
     
@@ -10,20 +12,21 @@ private String onoma;
         private String xwra;
 	private String poli;
 	private String dieuthinsi;
-	private int tilefwno;
+	private long tilefwno;
 	private String username;
 	private String password;
 	private String onoma_panepisthmiou;
 	private String klados_spoudwn;
-	private float vathmos_ptyxiou;
-	private float vathmos_diplomatikhs;
+	private double vathmos_ptyxiou;
+	private double vathmos_diplomatikhs;
 	private String titlos_diplomatikis;
 	private String apodeiktiko_ptyxiou;
 	private String deksiothtes;
 	private String epipleon_ptixia;
+        private String email;
 	
 
-	public PTYXIOUXOS(String onoma, String eponimo, String xwra, String poli, String dieuthinsi, int tilefwno, String username,  String password, String onoma_panepisthmiou, String klados_spoudwn, float vathmos_ptyxiou, float vathmos_diplomatikhs, String titlos_diplomatikis, String apodeiktiko_ptyxiou, String deksiothtes, String epipleon_ptixia)
+	public PTYXIOUXOS(String onoma, String eponimo, String xwra, String poli, String dieuthinsi, long tilefwno, String username,  String password, String onoma_panepisthmiou, String klados_spoudwn, double vathmos_ptyxiou, double vathmos_diplomatikhs, String titlos_diplomatikis, String apodeiktiko_ptyxiou, String deksiothtes, String epipleon_ptixia, String email)
 
 	{	
 		this.onoma = onoma;
@@ -58,9 +61,16 @@ private String onoma;
 		
 		this.epipleon_ptixia = epipleon_ptixia;
 		
+                this.email = email;
 	}
 	
 	
+        public String get_email()
+                
+        {
+            
+            return email;
+        }
 	
 	public String get_onoma()
             
@@ -135,13 +145,13 @@ private String onoma;
 
 
 
-	public int get_tilefwno()
+	public long get_tilefwno()
             
     {
         return tilefwno;
     }
     
-    public void set_tilefwno(int tilefwno)
+    public void set_tilefwno(long tilefwno)
             
     {
         this.tilefwno = tilefwno;
@@ -206,7 +216,7 @@ private String onoma;
 
 
 
-	public float get_vathmos_ptyxiou()
+	public double get_vathmos_ptyxiou()
             
     {
         return vathmos_ptyxiou;
@@ -220,13 +230,13 @@ private String onoma;
 
 
 
-	public float get_vathmos_diplomatikhs()
+	public double get_vathmos_diplomatikhs()
             
     {
         return vathmos_diplomatikhs;
     }
     
-    public void set_vathmos_diplomatikhs(float vathmos_diplomatikhs)
+    public void set_vathmos_diplomatikhs(double vathmos_diplomatikhs)
             
     {
         this.vathmos_diplomatikhs = vathmos_diplomatikhs;
@@ -287,7 +297,145 @@ private String onoma;
     {
         this.epipleon_ptixia = epipleon_ptixia;
     }	
+    
+    
+   public ArrayList<AITISI_GIA_THESI_ERGASIAS> get_aitiseis_theseis_ergasias()
+           
+   {
+       ArrayList<AITISI_GIA_THESI_ERGASIAS> result = new ArrayList<AITISI_GIA_THESI_ERGASIAS>();
+       
+       for(AITISI_GIA_THESI_ERGASIAS a: Careerfinder.aitiseis_thesewn_ergasias)
+           
+       {
+           if(a.get_username_ptyxiouxou().equals(this.username))
+               
+           {
+               result.add(a);
+               
+           }
+           
+       }
+       
+       return result;
+   }
+   
+   public void diagrafi_aitisis_thesis_ergasias(int kodikos)
+           
+   {
+       
+       for(AITISI_GIA_THESI_ERGASIAS a: Careerfinder.aitiseis_thesewn_ergasias)
+           
+       {
+           if(a.get_username_ptyxiouxou().equals(this.username) && a.get_kwdikos_aitisis()==kodikos)
+               
+           {
+               
+               Careerfinder.aitiseis_thesewn_ergasias.remove(a);
+               
+               break;
+               
+           }
+           
+       }
+       
+       
+   }
+    
+  public AITISI_GIA_THESI_ERGASIAS get_aitisi_thesis_ergasias(int kodikos)
+          
+  {
+      
+      AITISI_GIA_THESI_ERGASIAS result = null;
+      
+       for(AITISI_GIA_THESI_ERGASIAS a: Careerfinder.aitiseis_thesewn_ergasias)
+           
+       {
+           if(a.get_username_ptyxiouxou().equals(this.username) && a.get_kwdikos_aitisis()==kodikos)
+               
+           {
+               
+               result = a;
+               
+               break;
+               
+           }
+           
+       }
+      
+     return result; 
+      
+  }
 	
-
-
+ public ArrayList<AITHSH_GIA_METAPTYXIAKO> get_aitiseis_metaptyxiaka()
+         
+ {
+     ArrayList <AITHSH_GIA_METAPTYXIAKO> result = new ArrayList<AITHSH_GIA_METAPTYXIAKO>();
+     
+     
+     for(AITHSH_GIA_METAPTYXIAKO a: Careerfinder.aitiseis_metaptyxiakwn)
+         
+     {
+         if(a.get_username_ptixiouxou().equals(this.username))
+             
+         {
+             result.add(a);
+             
+         }
+         
+     }
+     
+     
+     return result;
+ }
+ 
+    
+   public void diagrafi_aitisis_metaptyxiakou(int kodikos)
+           
+   {
+       
+       for(AITHSH_GIA_METAPTYXIAKO a: Careerfinder.aitiseis_metaptyxiakwn)
+           
+       {
+           if(a.get_username_ptixiouxou().equals(this.username) && a.get_kodikos_aithshs()==kodikos)
+               
+           {
+               
+               Careerfinder.aitiseis_metaptyxiakwn.remove(a);
+               
+               break;
+               
+           }
+           
+       }
+       
+       
+   }
+ 
+   
+   public AITHSH_GIA_METAPTYXIAKO get_aitisi_metaptyxiakou(int kodikos)
+          
+  {
+      
+      AITHSH_GIA_METAPTYXIAKO result = null;
+      
+       for(AITHSH_GIA_METAPTYXIAKO a: Careerfinder.aitiseis_metaptyxiakwn)
+           
+       {
+           if(a.get_username_ptixiouxou().equals(this.username) && a.get_kodikos_aithshs()==kodikos)
+               
+           {
+               
+               result = a;
+               
+               break;
+               
+           }
+           
+       }
+      
+     return result; 
+      
+  }
+   
+ 
 }

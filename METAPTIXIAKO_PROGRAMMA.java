@@ -8,13 +8,13 @@ public class METAPTIXIAKO_PROGRAMMA {
         private String onoma_sxolhs;
         private String onoma_panepisthmiou;
 	private String titlos_programmatos;
-	private float apaitoumenos_vathmos_ptyxiou;
+	private double apaitoumenos_vathmos_ptyxiou;
 	private int plithos_eksamhnwn_parakolouthishs;
 	private String tropos_didaskalias;
-	private float poso_ana_eksamhno;
+	private double poso_ana_eksamhno;
 	
 	
-	public METAPTIXIAKO_PROGRAMMA (int id, String onoma_sxolhs, String onoma_panepisthmiou, String titlos_programmatos, float apaitoumenos_vathmos_ptyxiou, int plithos_eksamhnwn_parakolouthishs, String tropos_didaskalias, float poso_ana_eksamhno)
+	public METAPTIXIAKO_PROGRAMMA (int id, String onoma_sxolhs, String onoma_panepisthmiou, String titlos_programmatos, double apaitoumenos_vathmos_ptyxiou, int plithos_eksamhnwn_parakolouthishs, String tropos_didaskalias, double poso_ana_eksamhno)
 	
 	{	
 		this.id = id;
@@ -100,13 +100,13 @@ public class METAPTIXIAKO_PROGRAMMA {
 
 
 
-	public float get_apaitoumenos_vathmos_ptyxiou()
+	public double get_apaitoumenos_vathmos_ptyxiou()
             
     {
         return apaitoumenos_vathmos_ptyxiou;
     }
     
-    public void set_apaitoumenos_vathmos_ptyxiou(float apaitoumenos_vathmos_ptyxiou)
+    public void set_apaitoumenos_vathmos_ptyxiou(double apaitoumenos_vathmos_ptyxiou)
             
     {
         this.apaitoumenos_vathmos_ptyxiou = apaitoumenos_vathmos_ptyxiou;
@@ -148,13 +148,13 @@ public class METAPTIXIAKO_PROGRAMMA {
 
 
 
-	public float get_poso_ana_eksamhno()
+	public double get_poso_ana_eksamhno()
             
     {
         return poso_ana_eksamhno;
     }
     
-    public void set_poso_ana_eksamhno(float poso_ana_eksamhno)
+    public void set_poso_ana_eksamhno(double poso_ana_eksamhno)
             
     {
         this.poso_ana_eksamhno = poso_ana_eksamhno;

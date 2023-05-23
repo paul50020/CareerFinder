@@ -9,13 +9,13 @@ public class AKSIOLOGHSH {
 	
 	private int kodikos_aksiologhshs;
 	private int kodikos_aithshs;
-	private float vathmos;
+	private double vathmos;
 	private String sxolia;
 	private Date hmeromhnia_enhmerwshs;
 	private Time wra_enhmerwshs;
 	
 	
-	public AKSIOLOGHSH(int kodikos_aksiologhshs,int kodikos_aithshs, float vathmos, String sxolia, Date hmeromhnia_enhmerwshs, Time wra_enhmerwshs)
+	public AKSIOLOGHSH(int kodikos_aksiologhshs,int kodikos_aithshs, double vathmos, String sxolia, Date hmeromhnia_enhmerwshs, Time wra_enhmerwshs)
 	
 	{
 		this.kodikos_aksiologhshs = kodikos_aksiologhshs;
@@ -59,13 +59,13 @@ public class AKSIOLOGHSH {
         this.kodikos_aithshs = kodikos_aithshs;
     }
     
-    public float get_vathmos()
+    public double get_vathmos()
             
     {
         return vathmos;
     }
     
-    public void set_vathmos(float vathmos)
+    public void set_vathmos(double vathmos)
             
     {
         this.vathmos = vathmos;

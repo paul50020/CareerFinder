@@ -8,7 +8,7 @@ import java.util.Date;
 public class AITISI_GIA_THESI_ERGASIAS {    
     private int kwdikos_aitisis;
     private String username_ptyxiouxou;
-    private int kwdikos_metaptyxiakou_programmatos;
+    private int kwdikos_thesis_ergasias;
     private Date hmeromhnia;
     private Time wra;
     private String katastasi;
@@ -16,12 +16,12 @@ public class AITISI_GIA_THESI_ERGASIAS {
     
     
     
-    public AITISI_GIA_THESI_ERGASIAS (int kwdikos_aitisis, String username_ptyxiouxou, int kwdikos_metaptyxiakou_programmatos, Date hmeromhnia, Time wra, String katastasi)
+    public AITISI_GIA_THESI_ERGASIAS (int kwdikos_aitisis, String username_ptyxiouxou, int kwdikos_thesis_ergasias, Date hmeromhnia, Time wra, String katastasi)
    {
        
    this.kwdikos_aitisis = kwdikos_aitisis;
    this.username_ptyxiouxou = username_ptyxiouxou;
-   this.kwdikos_metaptyxiakou_programmatos = kwdikos_metaptyxiakou_programmatos;
+   this.kwdikos_thesis_ergasias = kwdikos_thesis_ergasias;
    this.hmeromhnia = hmeromhnia; 
    this.wra = wra;
    this.katastasi = katastasi;
@@ -53,16 +53,16 @@ public class AITISI_GIA_THESI_ERGASIAS {
         this.username_ptyxiouxou = username_ptyxiouxou;
     } 
          
-    public int get_kwdikos_metaptyxiakou_programmatos()
+    public int get_kwdikos_thesis_ergasias()
             
     {
-        return kwdikos_metaptyxiakou_programmatos;
+        return kwdikos_thesis_ergasias;
     }
     
-    public void set_kwdikos_metaptyxiakou_programmatos(int kwdikos_metaptyxiakou_programmatos)
+    public void set_kwdikos_thesis_ergasias(int kwdikos_thesis_ergasias)
             
     {
-        this.kwdikos_metaptyxiakou_programmatos = kwdikos_metaptyxiakou_programmatos;
+        this.kwdikos_thesis_ergasias = kwdikos_thesis_ergasias;
     }   
     
     
