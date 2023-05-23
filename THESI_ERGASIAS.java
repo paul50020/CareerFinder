@@ -9,16 +9,16 @@ public class THESI_ERGASIAS {
     private String epwnumia_etairias;
     private String titlos_thesis;
     private String tropos_ergasias;
-    private Float misthos;
+    private double misthos;
     private String apaitoumenos_titlos_ptyxioy;
     private String apaitoumenos_titlos_ptyxiakis;
-    private Float apaitoumenos_vathmos_ptyxiakis;
-    private Boolean sustatiki_epistoli;
+    private double apaitoumenos_vathmos_ptyxiakis;
+    private boolean sustatiki_epistoli;
     
     
     
     
-    public THESI_ERGASIAS (int id, String epwnumia_etairias, String titlos_thesis, String tropos_ergasias, Float misthos, String apaitoumenos_titlos_ptyxioy, String apaitoumenos_titlos_ptyxiakis, Float apaitoumenos_vathmos_ptyxioy, Boolean sustatiki_epistoli)
+    public THESI_ERGASIAS (int id, String epwnumia_etairias, String titlos_thesis, String tropos_ergasias, double misthos, String apaitoumenos_titlos_ptyxioy, String apaitoumenos_titlos_ptyxiakis, double apaitoumenos_vathmos_ptyxiakis, boolean sustatiki_epistoli)
     {
     
     this.id = id;
@@ -84,13 +84,13 @@ public class THESI_ERGASIAS {
         this.tropos_ergasias = tropos_ergasias;
     } 
     
-    public Float get_misthos()
+    public double get_misthos()
             
     {
         return misthos;
     }
     
-    public void set_misthos(Float misthos)
+    public void set_misthos(double misthos)
             
     {
         this.misthos = misthos;
@@ -120,7 +120,7 @@ public class THESI_ERGASIAS {
         this.apaitoumenos_titlos_ptyxiakis = apaitoumenos_titlos_ptyxiakis;
     }    
  
-    public Float get_apaitoumenos_vathmos_ptyxiakis()
+    public double get_apaitoumenos_vathmos_ptyxiakis()
             
     {
         return apaitoumenos_vathmos_ptyxiakis;

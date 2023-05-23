@@ -7,7 +7,7 @@ public class YPEYTHINOS_METAPTYXIAKWN {
     private String name;
     private String surname;
     private String dieuthinsi;
-    private int tilefwno;
+    private long tilefwno;
     private String username;
     private String email;
     private String password;
@@ -15,12 +15,12 @@ public class YPEYTHINOS_METAPTYXIAKWN {
     private String onomna_panepistimiou;
     private String xwra_panepistimiou;
     private String poli_panepistimiou;
-    private int thlefwno_sxolhs;
+    private long thlefwno_sxolhs;
     
     
     
     
-    public YPEYTHINOS_METAPTYXIAKWN(String name, String surname, String dieuthinsi, int tilefwno, String username, String email, String password, String onoma_sxolhs, String onomna_panepistimiou, String xwra_panepistimiou, String poli_panepistimiou, int thlefwno_sxolhs)
+    public YPEYTHINOS_METAPTYXIAKWN(String name, String surname, String dieuthinsi, long tilefwno, String username, String email, String password, String onoma_sxolhs, String onomna_panepistimiou, String xwra_panepistimiou, String poli_panepistimiou, long thlefwno_sxolhs)
     {
     this.name = name;
     this.surname = surname;
@@ -78,13 +78,13 @@ public class YPEYTHINOS_METAPTYXIAKWN {
         
     }
     
-     public int get_tilefwno()
+     public long get_tilefwno()
             
     {
         return tilefwno;
     }
     
-    public void set_tilefwno(int tilefwno)
+    public void set_tilefwno(long tilefwno)
             
     {
         this.tilefwno = tilefwno;
@@ -195,13 +195,13 @@ public class YPEYTHINOS_METAPTYXIAKWN {
     }
     
     
-     public int get_thlefwno_sxolhs()
+     public long get_thlefwno_sxolhs()
             
     {
         return thlefwno_sxolhs;
     }
     
-    public void set_thlefwno_sxolhs(int thlefwno_sxolhs)
+    public void set_thlefwno_sxolhs(long thlefwno_sxolhs)
             
     {
         this.thlefwno_sxolhs = thlefwno_sxolhs;
