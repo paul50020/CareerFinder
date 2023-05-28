@@ -329,5 +329,169 @@ public class Careerfinder {
          
         ptyxiouxoi.add(p1);
      }
+     
+     public static int check_aitisi_thesis_ergasias(ArrayList<String> mylist)
+             
+     {
+         int result = 1;
+         
+         String onoma = mylist.get(0);
+         
+         String eponimo = mylist.get(1);
+         
+         String onoma_panep = mylist.get(2);
+         
+         String titlos_dipl = mylist.get(3);
+         
+         double ptyxio = Double.valueOf(mylist.get(4));
+         
+         double diploma = Double.valueOf(mylist.get(5));
+         
+         String apodeiktiko = mylist.get(6);
+         
+         String sistatiki  = mylist.get(7);
+         
+         
+         if(onoma.equals("") || eponimo.equals("")|| onoma_panep.equals("")|| titlos_dipl.equals("")||ptyxio==0 || diploma==0 ||apodeiktiko.equals("")||sistatiki.equals(""))
+         {
+             return 0;
+         }
+         
+         File f1 = new File(apodeiktiko);
+         
+         if(f1.length() / (1024 * 1024)>50)
+             
+         {
+             
+             return 2;
+         }
+         
+          File f2 = new File(sistatiki);
+         
+         if(f2.length() / (1024 * 1024)>50)
+             
+         {
+             
+             return 3;
+         }
+         
+         if(!apodeiktiko.endsWith(".pdf")|| !sistatiki.endsWith((".pdf")))
+             
+         {
+             
+             return 4;
+         }
+         
+         return result;
+     }
+     
+     public static int check_dimiourgia_thesis_first_step(ArrayList<String> mylist)
+             
+     {
+         int result = 1;
+         
+         String onoma_etaireias = mylist.get(0);
+         
+         String titlos_thesis = mylist.get(1);
+         
+         String tropos_ergasias = mylist.get(2);
+         
+         double misthos = Double.valueOf(mylist.get(3));
+         
+         if(onoma_etaireias.equals("")|| titlos_thesis.equals("")|| tropos_ergasias.equals("")||misthos==0)
+             
+         {
+             return 0;
+             
+         }
+         
+         
+         return result;
+     }
     
+     public static int check_dimiouegia_thesis_second_step(ArrayList<String> mylist)
+             
+     {
+         int result = 1;
+         
+         String titlos_ptyxiou = mylist.get(0);
+         
+         String titlos_ptyxiakis = mylist.get(1);
+         
+         double vathmos = Double.valueOf(mylist.get(2));
+         
+         boolean sistatiki = Boolean.valueOf(mylist.get(3));
+         
+         String onoma_etaireias = mylist.get(4);
+         
+         String titlos_thesis = mylist.get(5);
+         
+         
+         if(titlos_ptyxiou.equals("") || titlos_ptyxiakis.equals("")|| vathmos==0 || sistatiki ==false)
+         
+         {
+           return 0;   
+             
+         }
+         
+         for (THESI_ERGASIAS t : Careerfinder.theseis_ergasias)
+             
+         {
+             if (t.get_epwnumia_etairias().equals(onoma_etaireias)&& t.get_titlos_thesis().equals(titlos_thesis))
+                 
+             {
+                 return 2;
+                                  
+             }
+             
+         }
+         
+         
+         return result;
+     }
+     
+     public static int check_aitisi_metaptyxiakou (ArrayList<String> mylist)
+             
+     {
+         int result = 1;
+         
+         String onoma = mylist.get(0);
+         
+         String eponimo  = mylist.get(1);
+         
+         String onoma_panep = mylist.get(2);
+         
+         String titlos_dipl = mylist.get(3);
+         
+         double ptyxio = Double.valueOf(mylist.get(4));
+         
+         double diplomatiki = Double.valueOf(mylist.get(5));
+         
+         String apodeiktiko = mylist.get(6);
+         
+         if(onoma.equals("")|| eponimo.equals("")|| onoma_panep.equals("")|| titlos_dipl.equals("")||ptyxio==0 || diplomatiki==0 || apodeiktiko.equals("") )
+             
+         {
+            return 0;       
+         }
+         
+         File f1 = new File(apodeiktiko);
+         
+         if(f1.length() / (1024 * 1024)>50)
+             
+         {
+             
+             return 2;
+         }
+         
+         if(!apodeiktiko.endsWith((".pdf")))
+             
+         {
+             return 3;
+             
+         }
+         
+         return result;
+     }
+     
 }

@@ -1,7 +1,9 @@
 
 package com.mycompany.careerfinder;
 
+import java.sql.Time;
 import java.util.ArrayList;
+import java.util.Date;
 
 
 public class PTYXIOUXOS {
@@ -436,6 +438,108 @@ private String onoma;
      return result; 
       
   }
+   
+   public ArrayList<THESI_ERGASIAS> get_theseis_ergasia()
+           
+   {
+       return Careerfinder.theseis_ergasias;
+       
+   }
+   
+   public void dimiourgia_aitisi_thesi_ergasias(int kodikos_thesis)
+   
+   {
+       Date d1 = new Date();
+       
+       Time t1 = new Time(0,0,0);
+       
+       AITISI_GIA_THESI_ERGASIAS ait1 = new AITISI_GIA_THESI_ERGASIAS(Careerfinder.aitiseis_thesewn_ergasias.size()+1,this.username,kodikos_thesis,d1,t1,"pros eggrisi");
+       
+       Careerfinder.aitiseis_thesewn_ergasias.add(ait1);
+       
+   }
+   
+   public ArrayList<THESI_ERGASIAS> anazitisi_thesewn_ergasias(ArrayList<String> kritiria)
+           
+   {
+       ArrayList<THESI_ERGASIAS> result = new ArrayList<THESI_ERGASIAS> ();
+       
+       double misthos_min = Double.valueOf(kritiria.get(0));
+       
+       double misthos_max = Double.valueOf(kritiria.get(1));
+       
+       String antikeimeno = kritiria.get(2);
+       
+       String typos = kritiria.get(3);
+       
+       for(THESI_ERGASIAS t: Careerfinder.theseis_ergasias)
+       
+       {
+           if(t.get_misthos()>=misthos_min && t.get_misthos()<=misthos_max && t.get_apaitoumenos_titlos_ptyxioy().equals(antikeimeno)&& t.get_tropos_ergasias().equals(typos))
+           
+           {
+               result.add(t);
+               
+           }
+       }
+       
+       return result;
+   }
+   
+   
+   public ArrayList<METAPTIXIAKO_PROGRAMMA> get_metaptyxiaka()
+           
+   {
+       return Careerfinder.metaptyxiaka;
+       
+   
+       
+   }
+   
+   public void dimiiourgia_aitisi_metaptyxiakou(int kodikos_metaptyxiakou)
+   
+   {
+       
+       Date d1 = new Date();
+       
+       Time t1 = new Time(0,0,0);
+       
+       AITHSH_GIA_METAPTYXIAKO ait1 = new AITHSH_GIA_METAPTYXIAKO(Careerfinder.aitiseis_metaptyxiakwn.size()+1,this.username,kodikos_metaptyxiakou,d1,t1,"pros eggrisi");
+       
+       Careerfinder.aitiseis_metaptyxiakwn.add(ait1);
+       
+       
+   }
+   
+   public ArrayList<METAPTIXIAKO_PROGRAMMA> anazitisi_metaptyxiakwn(ArrayList<String> kritiria)
+           
+   {
+       ArrayList<METAPTIXIAKO_PROGRAMMA> result = new ArrayList<METAPTIXIAKO_PROGRAMMA> ();
+       
+       double didaktra_min = Double.valueOf(kritiria.get(0));
+       
+       double didaktra_max = Double.valueOf(kritiria.get(1));
+       
+       String antikeimeno = kritiria.get(2);
+       
+       String typos = kritiria.get(3);
+       
+       for(METAPTIXIAKO_PROGRAMMA t: Careerfinder.metaptyxiaka)
+       
+       {
+           if(t.get_poso_ana_eksamhno()>=didaktra_min && t.get_poso_ana_eksamhno()<=didaktra_max && t.get_titlos_programmatos().equals(antikeimeno)&& t.get_tropos_didaskalias().equals(typos))
+           
+           {
+               result.add(t);
+               
+           }
+       }
+       
+       return result;
+   }
+   
+   
+   
    
  
 }

@@ -1,6 +1,8 @@
 
 package com.mycompany.careerfinder;
 
+import java.util.ArrayList;
+
 
 public class IPEUTHINOS_ANTHRWPINOU_DUNAMIKOU {
     
@@ -140,6 +142,30 @@ public void set_brand_name(String brand_name)
     }
 
 
-
+public void dimiourgia_thesis_ergasias(ArrayList<String> mylist)
+        
+{
+    
+    String eponimia_etaireias = mylist.get(0);
+    
+    String titlos_thesis= mylist.get(1);
+    
+    String tropos_ergasias = mylist.get(2);
+    
+    double misthos = Double.valueOf(mylist.get(3));
+    
+    String titlos_ptyxiou = mylist.get(4);
+    
+    String titlos_ptyxiakis = mylist.get(5);
+    
+    double vathmos_ptyxiakis = Double.valueOf(mylist.get(6));
+    
+    boolean systatiki = Boolean.valueOf((mylist.get(7)));
+    
+    
+    THESI_ERGASIAS t1 = new THESI_ERGASIAS(Careerfinder.theseis_ergasias.size()+1,eponimia_etaireias,titlos_thesis, tropos_ergasias, misthos, titlos_ptyxiou,titlos_ptyxiakis, vathmos_ptyxiakis, systatiki);
+    
+    Careerfinder.theseis_ergasias.add(t1);
+}
 
 }
