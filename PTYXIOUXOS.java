@@ -538,8 +538,103 @@ private String onoma;
        return result;
    }
    
+   public ArrayList<MHNYMA> get_eiserxomena()
+           
+   {
+       ArrayList<MHNYMA> result = new ArrayList <MHNYMA>();
+       
+       for (MHNYMA m: Careerfinder.minimata)
+           
+       {
+           if(m.get_username_paralipti().equals(this.username))
+               
+           {
+               result.add(m);
+           }
+           
+       }
+       
+       return result;
+   }
+   
+   public void dimiourgia_minimatos(ArrayList<String> mylist)
+           
+   {
+       String paraliptis = mylist.get(0);
+       
+       String thema = mylist.get(1);
+       
+       String periexomeno = mylist.get(2);
+       
+       Date d1 = new Date();
+       
+       Time t1 = new Time(1,0,5);
+       
+       String arxeio = mylist.get(3);
+       
+       MHNYMA m1 = new MHNYMA(Careerfinder.minimata.size()+1,this.username, paraliptis, thema, periexomeno, d1, t1, arxeio);
+       
+       Careerfinder.minimata.add(m1);
+       
+   }
+   
+   public MHNYMA get_eiserxomeno_minima(int kodikos)
+           
+   {
+       MHNYMA result = null;
+       
+       for(MHNYMA m: Careerfinder.minimata)
+           
+       {
+           if(m.get_username_paralipti().equals(this.username)&& m.get_id()==kodikos)
+           
+           {
+               result = m;
+               
+           }
+           
+       }
+       return result;
+   }
    
    
+      public ArrayList<MHNYMA> get_ekserxomena()
+           
+   {
+       ArrayList<MHNYMA> result = new ArrayList <MHNYMA>();
+       
+       for (MHNYMA m: Careerfinder.minimata)
+           
+       {
+           if(m.get_username_apostolea().equals(this.username))
+               
+           {
+               result.add(m);
+           }
+           
+       }
+       
+       return result;
+   }
    
+      
+     public MHNYMA get_ekserxomeno_minima(int kodikos)
+           
+   {
+       MHNYMA result = null;
+       
+       for(MHNYMA m: Careerfinder.minimata)
+           
+       {
+           if(m.get_username_apostolea().equals(this.username)&& m.get_id()==kodikos)
+           
+           {
+               result = m;
+               
+           }
+           
+       }
+       return result;
+   }  
  
 }

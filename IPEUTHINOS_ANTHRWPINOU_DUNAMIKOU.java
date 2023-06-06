@@ -1,7 +1,7 @@
 
 package com.mycompany.careerfinder;
 
-import java.util.ArrayList;
+import java.util.*;
 
 
 public class IPEUTHINOS_ANTHRWPINOU_DUNAMIKOU {
@@ -167,5 +167,62 @@ public void dimiourgia_thesis_ergasias(ArrayList<String> mylist)
     
     Careerfinder.theseis_ergasias.add(t1);
 }
+
+public ArrayList<PTYXIOUXOS> get_ptyxiouxoi()
+        
+{
+    return Careerfinder.ptyxiouxoi;
+    
+}
+
+public void taksinomisi_ptyxiouxoi(String kritirio)
+        
+{
+    if(kritirio.equals("eponimo"))
+        
+    {
+       Collections.sort(Careerfinder.ptyxiouxoi,Comparator.comparing(PTYXIOUXOS::get_eponimo));
+        
+    }
+    
+    else
+        
+    {
+       
+        Collections.sort(Careerfinder.ptyxiouxoi,Comparator.comparing(PTYXIOUXOS::get_titlos_diplomatikis));
+
+        
+    }
+    
+}
+
+public ArrayList<PTYXIOUXOS> get_ptyxiouxoi_filtra(ArrayList<String> mylist)
+        
+{
+    ArrayList<PTYXIOUXOS> result = new ArrayList<PTYXIOUXOS>();
+    
+    String ptyxio = mylist.get(0);
+         
+    String ptyxiaki = mylist.get(1);
+         
+    double vathmos = Double.valueOf((mylist.get(2)));
+    
+    for(PTYXIOUXOS p: Careerfinder.ptyxiouxoi)
+    
+    {
+        if(p.get_klados_spoudwn().equals(ptyxio)&& p.get_titlos_diplomatikis().equals(ptyxiaki)&&p.get_vathmos_diplomatikhs()==vathmos)
+            
+        {
+            
+            result.add(p);
+        }
+        
+    }
+    
+    
+    return result;
+}
+
+
 
 }

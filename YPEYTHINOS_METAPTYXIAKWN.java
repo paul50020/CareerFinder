@@ -1,6 +1,10 @@
 
 package com.mycompany.careerfinder;
 
+import java.sql.Time;
+import java.util.ArrayList;
+import java.util.Date;
+
 
 public class YPEYTHINOS_METAPTYXIAKWN {
     
@@ -206,5 +210,161 @@ public class YPEYTHINOS_METAPTYXIAKWN {
     {
         this.thlefwno_sxolhs = thlefwno_sxolhs;
     }
+    
+    public ArrayList<AITHSH_GIA_METAPTYXIAKO> get_aitiseis_metaptyxiakwn(int kodikos)
             
+    {
+        ArrayList<AITHSH_GIA_METAPTYXIAKO> result = new ArrayList<AITHSH_GIA_METAPTYXIAKO>();
+        
+        for(AITHSH_GIA_METAPTYXIAKO a: Careerfinder.aitiseis_metaptyxiakwn)
+            
+        {
+            if(a.get_kodikos_metaptixiakou_programmatos()==kodikos)
+                
+            {
+                
+                result.add(a);
             }
+            
+        }
+        
+        return result;
+    }
+    
+    public PTYXIOUXOS get_ptyxiouxos(String username)
+            
+    {
+        PTYXIOUXOS result = null;
+        
+        for(PTYXIOUXOS p: Careerfinder.ptyxiouxoi)
+            
+        {
+            if(p.get_username().equals(username))
+                
+                
+            {
+                result = p;
+                
+            }
+            
+        }
+        return result;
+    }
+    
+    public String get_apodeiktiko(String username)
+            
+    {
+        String result = null;
+        
+        for(PTYXIOUXOS p: Careerfinder.ptyxiouxoi)
+            
+        {
+            if(p.get_username().equals(username))
+                
+            {
+                result = p.get_apodeiktiko_ptyxiou();
+                
+            }
+            
+            
+        }
+        return result;
+    }
+    
+    public void dimourgia_prosklisis(ArrayList<String> mylist)
+            
+    {
+        String paraliptis = mylist.get(0);
+        
+        String thema = mylist.get(1);
+        
+        String minima = mylist.get(2);
+
+        Date d1 = new Date();
+        
+        Time t1 = new Time(0,0,0);
+        
+        
+        PROSKLISI p1 = new PROSKLISI(Careerfinder.proskliseis.size()+1,this.username,paraliptis,thema,minima,d1,t1);
+        
+        Careerfinder.proskliseis.add(p1);
+        
+    }
+    
+    public AKSIOLOGHSH get_aksilogisi(int kodikos_aitisis)
+            
+    {
+        AKSIOLOGHSH result = null;
+        
+        for(AKSIOLOGHSH a: Careerfinder.aksiologiseis)
+            
+        {
+            if (a.get_kodikos_aithshs()==kodikos_aitisis)
+                
+            {
+                result = a;
+            }
+            
+        }
+        
+        return result;
+    }
+    
+    public void prosthiki_vathmou_aksiologisis(double vathmos, int kodikos_aksiologisis)
+    {
+        for(AKSIOLOGHSH a: Careerfinder.aksiologiseis)
+            
+        {
+            if(a.get_kodikos_aksiologhshs()==kodikos_aksiologisis)
+                
+            {
+                a.set_vathmos(vathmos);
+                
+            }
+            
+        }
+        
+    }
+    
+    public void prosthiki_sxoliou_aksologisis(String sxolio, int kodikos_aksiologisis)
+            
+    {
+        for(AKSIOLOGHSH a: Careerfinder.aksiologiseis)
+            
+        {
+            if(a.get_kodikos_aksiologhshs()==kodikos_aksiologisis)
+                
+            {
+                a.set_sxolia(sxolio);
+                
+            }
+            
+        }
+        
+    }
+    
+    public void dimiourgia_metaptyxiakou(ArrayList<String> mylist)
+            
+    {
+        String sxoli = mylist.get(0);
+        
+        String panep = mylist.get(1);
+        
+        String titlos = mylist.get(2);
+        
+        double vathmos = Double.valueOf(mylist.get(3));
+        
+        int eksamina = Integer.valueOf(mylist.get(4));
+        
+        String tropos = mylist.get(5);
+        
+        double poso = Double.valueOf(mylist.get(6));
+        
+        METAPTIXIAKO_PROGRAMMA m = new METAPTIXIAKO_PROGRAMMA(Careerfinder.metaptyxiaka.size()+1,sxoli,panep,titlos,vathmos,eksamina,tropos,poso);
+        
+        Careerfinder.metaptyxiaka.add(m);
+        
+    }
+    
+            
+     }

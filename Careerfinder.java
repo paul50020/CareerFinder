@@ -228,6 +228,46 @@ public class Careerfinder {
         return result;
     }
     
+	public static int check_registration_file(String onoma){
+		
+		
+		int result = 1;
+		
+		
+		if(!onoma.endsWith((".pdf")))
+             
+             
+         {
+             return 4;
+             
+         }
+         
+         File f1 = new File(onoma);
+         
+         if(f1.length() / (1024 * 1024)>50)
+             
+         {
+             
+             return 5;
+         }
+		
+		
+		
+		
+		
+		return result;
+		
+
+		
+	}
+	
+	
+	
+	
+	
+	
+	
+	
      public static int check_registration_second_step(ArrayList<String> mylist)
              
      
@@ -245,7 +285,7 @@ public class Careerfinder {
          
          String title = mylist.get(4);
          
-         String myfile = mylist.get(5);
+        
          
          
          if(degree < 5 || degree > 10)
@@ -262,22 +302,7 @@ public class Careerfinder {
              
          }
          
-         if(!myfile.endsWith((".pdf")))
-             
-             
-         {
-             return 4;
-             
-         }
          
-         File f1 = new File(myfile);
-         
-         if(f1.length() / (1024 * 1024)>50)
-             
-         {
-             
-             return 5;
-         }
          
          
          
@@ -409,7 +434,7 @@ public class Careerfinder {
          return result;
      }
     
-     public static int check_dimiouegia_thesis_second_step(ArrayList<String> mylist)
+     public static int check_dimiourgia_thesis_second_step(ArrayList<String> mylist)
              
      {
          int result = 1;
@@ -488,6 +513,223 @@ public class Careerfinder {
              
          {
              return 3;
+             
+         }
+         
+         return result;
+     }
+     
+     public static int check_stoixeia_anazitisis_ptyxiouxou(ArrayList<String> mylist)
+             
+     {
+         int result = 1;
+         
+         String ptyxio = mylist.get(0);
+         
+         String ptyxiaki = mylist.get(1);
+         
+         double vathmos = Double.valueOf((mylist.get(2)));
+         
+         if(ptyxio.equals((""))||ptyxiaki.equals("")|| vathmos==0)
+             
+         {
+             
+             return 0;
+         }
+         
+         if(vathmos<0 || vathmos > 10)
+             
+         {
+             
+             return 2;
+         }
+         
+         return result;
+     }
+     
+     public static int check_dimiourgia_minimatos (ArrayList<String> mylist)
+             
+             
+     {
+         int result=1;
+         
+         String paraliptis = mylist.get(0);
+         
+         String thema = mylist.get(1);
+         
+         String keimeno = mylist.get(2);
+         
+         String arxeio = mylist.get(3);
+         
+         if(paraliptis.equals("")|| thema.equals("")|| keimeno.equals("")|| arxeio.equals(""))
+         
+         {
+             return 0;
+             
+         }
+         
+         
+         
+         int found = 0;
+         
+         for(YPEYTHINOS_METAPTYXIAKWN y: Careerfinder.ipefthinoi_metaptyxiakwn)
+         
+         {
+             if(y.get_username().equals(paraliptis))
+                 
+             {
+                 found = 1;
+                 
+                 break;
+             }
+             
+         }
+         
+         if(found==0)
+             
+         {
+             
+             return 4;
+         }
+         
+         return result;
+     }
+     
+     public static int check_file_dimiourgia_minimatos(String arxeio)
+             
+     {
+         File f1 = new File(arxeio);
+         
+         if(f1.length() / (1024 * 1024)>50)
+             
+         {
+             
+             return 2;
+         }
+         
+         if(!arxeio.endsWith((".pdf")))
+             
+         {
+             return 3;
+             
+         } 
+         
+         return 1;
+     }
+     
+     public static int check_stoixeia_prosklisis(ArrayList<String> mylist)
+             
+     {
+         int result = 1;
+         
+         String paraliptis = mylist.get(0);
+         
+         String thema = mylist.get(1);
+         
+         String keimeno = mylist.get(2);
+         
+         if(paraliptis.equals("")|| thema.equals("")|| keimeno.equals(""))
+             
+         {
+             return 0;
+             
+         }
+         
+         return result;
+     }
+     
+     public static int check_sxolio_aksiologisis(String sxolio)
+             
+     {
+         if(sxolio.equals(""))
+             
+         {
+             
+             return 0;
+         }
+         
+         else
+             
+         {
+             
+             return 1;
+             
+         }
+         
+     }
+     
+     public static int check_dimiourgia_metaptyxiakou_first_step(ArrayList<String> mylist)
+             
+     {
+         
+         int result = 1;
+         
+         String eponimia = mylist.get(0);
+         
+         String titlos = mylist.get(1);
+         
+         double vathmos = Double.valueOf(mylist.get(2));
+         
+         if(eponimia.equals("")|| titlos.equals("")||vathmos==0)
+             
+         {
+             
+             return 0;
+         }
+         
+         int found = 0;
+         
+         for(METAPTIXIAKO_PROGRAMMA m: Careerfinder.metaptyxiaka)
+             
+         {
+             if(m.get_onoma_sxolhs().equals(eponimia)&& m.get_titlos_programmatos().equals(titlos))
+             {
+                 found = 1;
+                 
+                 break;
+             }
+         }
+         
+         if(found ==1)
+             
+         {
+             
+             return 2;
+         }
+         
+         if( vathmos <5 || vathmos >10)
+             
+         {
+             return 3;
+             
+         }
+         
+         return result;
+     }
+     
+     public static int check_dimiourgia_metaptyxiakou_second_step(ArrayList<String> mylist)
+             
+     {
+         int result = 1;
+         
+         
+         int eksamina = Integer.valueOf(mylist.get(0));
+         
+         String tropos = mylist.get(1);
+         
+         double poso = Double.valueOf(mylist.get(2));
+         
+         if(eksamina==0 || tropos.equals("")|| poso==0)
+             
+         {
+             return 0;
+             
+         }
+         
+         if(poso < 0)
+             
+         {
+             return 2;
              
          }
          
